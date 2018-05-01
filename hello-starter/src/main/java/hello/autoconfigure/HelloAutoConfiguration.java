@@ -24,6 +24,7 @@ public class HelloAutoConfiguration {
 	@Bean
 	@ConditionalOnMissingBean
 	@ConditionalOnProperty(prefix = "hello", value = "prefix")
+//	@ConditionalOnValidHelloPrefix
 	public HelloService helloService() {
 		return new ConsoleHelloService(this.properties.getPrefix(),
 				this.properties.getSuffix());
